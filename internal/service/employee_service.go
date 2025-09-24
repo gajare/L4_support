@@ -9,7 +9,7 @@ type EmployeeService struct {
 	repo *repository.EmployeeRepository
 }
 
-func NewEmployeeRepository(repo *repository.EmployeeRepository) *EmployeeService {
+func NewEmployeeService(repo *repository.EmployeeRepository) *EmployeeService {
 	return &EmployeeService{repo: repo}
 }
 
@@ -29,6 +29,6 @@ func (s *EmployeeService) UpdateEmployee(employee *models.Employee) error {
 	return s.repo.Update(*employee)
 }
 
-func (s *EmployeeService) Delete(id uint) error {
+func (s *EmployeeService) DeleteEmployee(id uint) error {
 	return s.repo.Delete(id)
 }
