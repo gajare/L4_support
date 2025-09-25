@@ -21,12 +21,12 @@ func (s *EmployeeService) GetEmployee(id uint) (*models.Employee, error) {
 	return s.repo.GetByID(id)
 }
 
-func (s *EmployeeService) GetEmployees() ([]models.Employee, error) {
+func (s *EmployeeService) GetAllEmployees() ([]models.Employee, error) {
 	return s.repo.GetAll()
 }
 
 func (s *EmployeeService) UpdateEmployee(employee *models.Employee) error {
-	return s.repo.Update(*employee)
+	return s.repo.Update(employee)
 }
 
 func (s *EmployeeService) DeleteEmployee(id uint) error {

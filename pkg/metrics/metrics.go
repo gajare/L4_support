@@ -7,17 +7,17 @@ import (
 
 var (
 	HttpRequestsTotal = promauto.NewCounterVec(prometheus.CounterOpts{
-		Name: "http_request_total",
-		Help: "Total number of HTTP request",
-	}, []string{"method", "path"})
+		Name: "http_requests_total",
+		Help: "Total number of HTTP requests",
+	}, []string{"method", "path", "status"})
 
 	HttpRequestDuration = promauto.NewHistogramVec(prometheus.HistogramOpts{
-		Namespace: "http_request_duration_seconds",
-		Help:      "Duration of HTTP requests",
+		Name: "http_request_duration_seconds",
+		Help: "Duration of HTTP requests",
 	}, []string{"method", "path"})
 
 	DatabaseOperationsTotal = promauto.NewCounterVec(prometheus.CounterOpts{
 		Name: "database_operations_total",
-		Help: "total number of database operation",
+		Help: "Total number of database operations",
 	}, []string{"operation", "table"})
 )
